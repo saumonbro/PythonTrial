@@ -1,46 +1,39 @@
-# This is a sample Python script.
-
-# Press Maj+F10 to execute it or replace it with your code.
-# Press Double Shift to search everywhere for classes, files, tool windows, actions, and settings.
-
-
-# Press the green button in the gutter to run the script.
 import unittest
 from Core import *
 
 
-class TrialOfTheGods(unittest.TestCase):
+class PythonTrial(unittest.TestCase):
 
     # Define your test methods as functions starting with "test_"
 
-    # Test HelloGods function
-    def test_HelloGods(self):
-        result = HelloGods()
-        expected = "Hello Gods !"
+    # Test Hello function
+    def test_Hello(self):
+        result = Hello()
+        expected = "Hello sir !"
         self.assertEqual(result, expected)
-        print("HelloGods-test1: Ok" if result == expected else "HelloGods-test1: Fail")
+        print("Hello-test1: Ok" if result == expected else "Hello-test1: Fail")
 
-    # Test MyGodAge function
-    def test_MyGodAge(self):
-        result1 = MyGodAge(25, "Zeus")
+    # Test MyAge function
+    def test_MyAge(self):
+        result1 = MyAge(25, "Zeus")
         expected1 = 4 * 42 + 25
         self.assertEqual(result1, expected1)
-        print("MyGodAge-test1: Ok" if result1 == expected1 else "MyGodAge-test1: Fail")
+        print("MyAge-test1: Ok" if result1 == expected1 else "MyAge-test1: Fail")
 
-        result2 = MyGodAge(18, "Athena")
+        result2 = MyAge(18, "Athena")
         expected2 = 6 * 42 + 18
         self.assertEqual(result2, expected2)
-        print("MyGodAge-test2: Ok" if result2 == expected2 else "MyGodAge-test2: Fail")
+        print("MyAge-test2: Ok" if result2 == expected2 else "MyAge-test2: Fail")
 
-        result3 = MyGodAge(30, "")
+        result3 = MyAge(30, "")
         expected3 = -1
         self.assertEqual(result3, expected3)
-        print("MyGodAge-test3: Ok" if result3 == expected3 else "MyGodAge-test3: Fail")
+        print("MyAge-test3: Ok" if result3 == expected3 else "MyAge-test3: Fail")
 
-        result4 = MyGodAge(-10, "Hades")
+        result4 = MyAge(-10, "Hades")
         expected4 = -1
         self.assertEqual(result4, expected4)
-        print("MyGodAge-test4: Ok" if result4 == expected4 else "MyGodAge-test4: Fail")
+        print("MyAge-test4: Ok" if result4 == expected4 else "MyAge-test4: Fail")
 
     # Test MyPow function
     def test_MyPow(self):
@@ -75,13 +68,10 @@ class TrialOfTheGods(unittest.TestCase):
 
 
 if __name__ == '__main__':
-    # Create a test suite
-    suite = unittest.TestLoader().loadTestsFromTestCase(TrialOfTheGods)
+    suite = unittest.TestLoader().loadTestsFromTestCase(PythonTrial)
 
-    # Run the tests and print the results
-    result = unittest.TextTestRunner(verbosity=2).run(suite)
+    result = unittest.TextTestRunner(verbosity=0).run(suite)
 
-    # Check if all tests passed
     if result.wasSuccessful():
         print("All tests passed!")
     else:
